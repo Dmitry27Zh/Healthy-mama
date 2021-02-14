@@ -1,0 +1,16 @@
+{
+  "name": "healthy-mama",
+  "version": "1.0.0",
+  "description": "Тренировачный проект по вёрстке",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "7.20.0",
+    "stylelint": "13.10.0",
+    "stylelint-config-htmlacademy": "0.1.x",
+    "eslint-config-htmlacademy": "0.4.x"
+  }
+}
