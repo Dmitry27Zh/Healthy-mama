@@ -3,11 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/normalize.css" />
     <link rel="stylesheet" href="CSS/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Новый проект</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur a blanditiis autem obcaecati ullam repellat architecto id facere accusantium. Modi?</p>
+    <main>
+      <section class="products section">
+        <h2>Обязательные продукты для здорового питания:</h2>
+        <div class="products__slider">
+          <ul class="products__slider-list list-reset">
+            <li class="products__slide">
+              <div class="products__slide-image">
+                <img src="img/product-1-desktop@1x.jpg" width="664" height="261" alt="Овощи" />
+              </div>
+              <div class="products__slide-text">
+                <h3>Овощи</h3>
+                <p>
+                  Брокколи, тыква, цветная капуста, репка, огурцы. Готовьте блюда из туш еных смесей без добавления
+                  масла.
+                </p>
+              </div>
+            </li>
+            <li class="products__slide products__slide--active">
+              <div class="products__slide-image">
+                <img src="img/product-2-desktop@1x.jpg" width="664" height="261" alt="Мясо" />
+              </div>
+              <div class="products__slide-text">
+                <h3>Мясо</h3>
+                <p>
+                  Крольчатина, телятина, индейка, курица без кожи. Мясные блюда ежедневно должны присутствовать в
+                  питании в тушеном, запеченном или вареном виде.
+                </p>
+              </div>
+            </li>
+            <li class="products__slide">
+              <div class="products__slide-image">
+                <img src="img/product-3-desktop@1x.jpg" width="664" height="261" alt="Продукты из молокa" />
+              </div>
+              <div class="products__slide-text">
+                <h3>Продукты из молока</h3>
+                <p>
+                  Сыр, ряженка, простокваша, творог, йогурт без добавок, кефир. Желательно кушать их кормящей маме
+                  ежедневно либо через день.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <button class="products__button products__button--prev">
+            <span class="visually-hidden">Предыдущий слайд</span>
+          </button>
+          <button class="products__button products__button--next">
+            <span class="visually-hidden">Следующий слайд</span>
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="js/modules/slider.js"></script>
   </body>
 </html>
