@@ -138,6 +138,16 @@
       }
     }
 
+    function updateSlider() {
+      const lastMoveLength = moveLength;
+      getMoveLength();
+      if (lastMoveLength !== moveLength) {
+        const translateValueProportion = translateValue / lastMoveLength;
+        translateValue = translateValueProportion * moveLength;
+        slidesContainer.style.transform = `translateX(${translateValue}px)`;
+      }
+    }
+
     return function () {
       getMoveLength();
 
@@ -149,6 +159,10 @@
 
       nextButton.addEventListener('click', () => {
         toggleSlide(SliderMode.NEXT);
+      });
+
+      window.addEventListener('resize', () => {
+        updateSlider();
       });
     };
   };

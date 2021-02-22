@@ -88,26 +88,44 @@
 }
 
 .products__slide-text {
-  padding: 25px 30px 30px;
+  padding: 1.3vw 1.56vw 1.56vw;
   text-align: center;
 
   h3 {
     margin: 0;
-    font-size: 20px;
-    line-height: 23.6px;
+    font-size: 1.041vw;
+    line-height: 1.18;
     font-weight: 700;
   }
 
   p {
-    margin: 12px 0;
+    margin: 0;
+    margin-top: 0.625vw;
     font-weight: 600;
     color: $dark-green;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding: 3.25vw 3.91vw 3.91vw;
+
+    h3 {
+      font-size: 2.6vw;
+    }
+
+    p {
+      margin-top: 1.56vw;
+    }
   }
 
   @media (max-width: $mobile-width-max) {
     padding: 4.68vw 3.125vw;
 
+    h3 {
+      font-size: 5vw;
+    }
+
     p {
+      margin-top: 4.6vw;
       font-size: 4.37vw;
       line-height: 1.49;
     }

@@ -13,5 +13,5 @@
   };
 
   const initSlider = window.slider(sliderElement, slidesContainer, buttonPrevElement, buttonNextElement, MoveLengthToBreakpoints);
-  // initSlider();
+  initSlider();
 })();

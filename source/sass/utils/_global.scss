@@ -1,8 +1,16 @@
 body {
   margin: 0;
   font-family: $font-family-main;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 0.833vw;
+  line-height: 1.49;
+
+  @media (max-width: $tablet-width-max) {
+    font-size: 2.083vw;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    font-size: 5vw;
+  }
 }
 
 img {

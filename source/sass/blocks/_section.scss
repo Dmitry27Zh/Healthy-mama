@@ -1,15 +1,19 @@
 .section {
   h2 {
-    width: 479px;
-    font-size: 41px;
-    line-height: 48.38px;
+    width: 24.94vw;
+    font-size: 2.135vw;
+    line-height: 1.18;
     font-weight: 700;
     color: $main-green;
     text-align: center;
 
+    @media (max-width: $tablet-width-max) {
+      width: 62.86vw;
+      font-size: 5.33vw;
+    }
+
     @media (max-width: $mobile-width-max) {
       font-size: 6.875vw;
-      line-height: 1.18;
     }
   }
 }
