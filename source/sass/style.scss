@@ -1,6 +1,9 @@
 @import "utils/_fonts";
-@import "utils/variables";
+@import "utils/_variables";
 @import "utils/_global";
-@import "utils/list-reset";
-@import "blocks/section";
-@import "blocks/products";
+@import "utils/_list-reset";
+@import "blocks/_section";
+@import "blocks/_header";
+@import "blocks/_logo";
+@import "blocks/main-nav";
+@import "blocks/_products";
