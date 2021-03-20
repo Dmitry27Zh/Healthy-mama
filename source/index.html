@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Document</title>
+    <title>Здоровая мама - доставка питания</title>
   </head>
   <body>
     <header class="header">
-      <a class="header__logo logo">Здоровая мама</a>
+      <div class="header__wrapper">
+        <a class="header__logo logo">Здоровая мама</a>
+        <button class="header__toggle"><span class="visually-hidden">Открыть меню</span></button>
+      </div>
       <nav class="header__nav main-nav">
-        <button class="main-nav__toggle"><span class="visually-hidden">Открыть меню</span></button>
         <ul class="main-nav__list list-reset">
           <li class="main-nav__item">
             <a href="#" class="main-nav__link">Важность правильного питания</a>
@@ -80,5 +82,6 @@
     <script src="js/modules/utils/const.js"></script>
     <script src="js/modules/slider.js"></script>
     <script src="js/modules/products-slider.js"></script>
+    <script src="js/modules/mobile-menu.js"></script>
   </body>
 </html>
