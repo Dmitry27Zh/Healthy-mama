@@ -3,6 +3,7 @@ body {
   font-family: $font-family-main;
   font-size: 0.833vw;
   line-height: 1.49;
+  max-width: 100vw;
 
   @media (max-width: $tablet-width-max) {
     font-size: 2.083vw;

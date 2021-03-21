@@ -1,0 +1,59 @@
+.button {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 12.656vw;
+  padding: 0.989vw 4.322vw 0.937vw 2.187vw;
+  background-color: $main-green;
+  border: 0.26vw solid $white;
+  border-radius: 3.385vw;
+  box-shadow: 0 0 0 1px rgba($decorative-blue, 0.11);
+  font-size: 0.729vw;
+  line-height: 1.4;
+  font-weight: 700;
+  color: $white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0.364vw;
+    width: 2.239vw;
+    height: 2.239vw;
+    background-color: $light-green;
+    background-image: url("../img/svg/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.989vw 0.626vw;
+    border-radius: 50%;
+  }
+
+  &:hover,
+  &:focus {
+    color: $main-green;
+    background-color: transparent;
+    border-color: $main-green;
+    box-shadow: none;
+
+    &::after {
+      background-color: $accent-green;
+    }
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding: 2.473vw 10.807vw 2.343vw 5.468vw;
+    width: 31.9vw;
+    border-width: 0.651vw;
+    border-radius: 8.463vw;
+    font-size: 1.822vw;
+
+    &::after {
+      right: 0.911vw;
+      width: 5.598vw;
+      height: 5.598vw;
+      background-size: 2.473vw 1.562vw;
+    }
+  }
+}

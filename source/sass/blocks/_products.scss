@@ -2,8 +2,15 @@
   padding-top: 50px;
 
   h2 {
+    width: 24.94vw;
     margin: 0 auto;
     margin-bottom: 85px;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    h2 {
+      width: 62.86vw;
+    }
   }
 
   @media (max-width: $mobile-width-max) {

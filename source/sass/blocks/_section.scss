@@ -1,6 +1,5 @@
 .section {
   h2 {
-    width: 24.94vw;
     font-size: 2.135vw;
     line-height: 1.18;
     font-weight: 700;
@@ -8,7 +7,6 @@
     text-align: center;
 
     @media (max-width: $tablet-width-max) {
-      width: 62.86vw;
       font-size: 5.33vw;
     }
 
