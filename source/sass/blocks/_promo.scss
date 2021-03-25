@@ -15,6 +15,10 @@
       background-image: url("../img/promo-bg-tablet@2x.jpg");
     }
   }
+
+  @media (max-width: $mobile-width-max) {
+    padding-top: 36.25vw;
+  }
 }
 
 .promo__wrapper {
@@ -67,6 +71,21 @@
       max-width: 71.038%;
     }
   }
+
+  @media (max-width: $mobile-width-max) {
+    width: 100%;
+
+    h1 {
+      font-size: 7.812vw;
+    }
+
+    p {
+      margin-top: 7.137vw;
+      margin-bottom: 11.25vw;
+      max-width: 79.38%;
+      font-size: 5vw;
+    }
+  }
 }
 
 input[id^="promo"][type="radio"] {
@@ -115,6 +134,14 @@ input[id^="promo"][type="radio"] {
       border-width: 5.2vw;
     }
   }
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 30.937vw;
+
+    &::before {
+      display: none;
+    }
+  }
 }
 
 .promo__slider-list {
@@ -123,6 +150,10 @@ input[id^="promo"][type="radio"] {
 
   @media (max-width: $tablet-width-max) {
     min-height: 82.31vw;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    display: flex;
   }
 }
 
@@ -170,6 +201,7 @@ input[id^="promo"][type="radio"] {
     font-size: 0.729vw;
     line-height: 1.4;
     color: $medium-gray;
+    cursor: pointer;
 
     &::after {
       content: "";
@@ -244,6 +276,7 @@ input[id^="promo"][type="radio"] {
         top: -4.947vw;
         left: 33.073vw;
         width: 50.781vw;
+        height: auto;
       }
     }
 
@@ -257,6 +290,53 @@ input[id^="promo"][type="radio"] {
         top: -11.458vw;
         left: 31.984vw;
         width: 58.203vw;
+        height: auto;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-shrink: 0;
+
+    &--pregnant {
+      .promo__slide-picture {
+        width: 210vw;
+      }
+    }
+
+    &--feeding {
+      .promo__slide-picture {
+        width: 81.25vw;
+      }
+    }
+
+    &--meal {
+      .promo__slide-picture {
+        width: 81.25vw;
+      }
+    }
+
+    label {
+      position: static;
+      justify-content: center;
+      margin-bottom: 9.687vw;
+      font-size: 5.625vw;
+      font-weight: 700;
+      color: $graphite;
+
+      &::after {
+        display: none;
+      }
+
+      &:hover,
+      &:focus {
+        span {
+          transform: none;
+        }
       }
     }
   }
@@ -285,5 +365,28 @@ input[id^="promo"][type="radio"] {
     img {
       height: auto;
     }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    position: static;
+    display: block;
+  }
+}
+
+.promo__slider-controls {
+  display: none;
+
+  @media (max-width: $mobile-width-max) {
+    display: block;
+  }
+}
+
+.promo__slider-button {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  &--next {
+    right: 0;
   }
 }

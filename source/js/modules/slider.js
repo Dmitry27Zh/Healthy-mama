@@ -11,7 +11,7 @@
 
   const Breakpoints = window.const.Breakpoints;
 
-  window.slider = (sliderElement, slidesContainer, prevButton, nextButton, moveLengthList) => {
+  window.slider = (sliderElement, slidesContainer, prevButton, nextButton, moveLengthList, activeSlideClassName) => {
     let moveLength = null;
     let translateValue = 0;
 
@@ -75,13 +75,13 @@
       const slidesHalfQuantity = Math.floor(slides.length / 2);
       slides.slice(slidesHalfQuantity).reverse().forEach((slide) => {
         const slideCopy = slide.cloneNode(true);
-        slideCopy.classList.remove('products__slide--active');
+        slideCopy.classList.remove(activeSlideClassName);
         slidesContainer.prepend(slideCopy);
         resetTranslate(SliderMode.PREV);
       });
       slides.slice(0, slidesHalfQuantity).forEach((slide) => {
         const slideCopy = slide.cloneNode(true);
-        slideCopy.classList.remove('products__slide--active');
+        slideCopy.classList.remove(activeSlideClassName);
         slidesContainer.append(slideCopy);
       });
     }
@@ -91,7 +91,7 @@
 
     function toggleActiveClass(mode) {
       let activeSlideIndex = [...slidesContainer.children].indexOf(activeSlideElement);
-      activeSlideElement.classList.remove('products__slide--active');
+      activeSlideElement.classList.remove(activeSlideClassName);
       switch (mode) {
         case SliderMode.PREV:
           activeSlideElement = slidesContainer.children[--activeSlideIndex];
@@ -100,7 +100,7 @@
           activeSlideElement = slidesContainer.children[++activeSlideIndex];
           break;
       }
-      activeSlideElement.classList.add('products__slide--active');
+      activeSlideElement.classList.add(activeSlideClassName);
     }
 
     let slideInterval = null;
@@ -112,7 +112,9 @@
             return;
           }
 
-          toggleActiveClass(mode);
+          if (activeSlideClassName) {
+            toggleActiveClass(mode);
+          }
           setTranslate(mode);
 
           slideInterval = window.setTimeout(() => {
@@ -126,7 +128,9 @@
             return;
           }
 
-          toggleActiveClass(mode);
+          if (activeSlideClassName) {
+            toggleActiveClass(mode);
+          }
           setTranslate(mode);
 
           slideInterval = window.setTimeout(() => {

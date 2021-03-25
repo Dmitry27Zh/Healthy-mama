@@ -1,10 +1,12 @@
 .header {
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
   align-items: flex-start;
   padding: 2.083vw 20.52vw 0;
+  width: 100%;
 
   @media (max-width: $tablet-width-max) {
     padding: 5.73vw 12.76vw 0 14.45vw;

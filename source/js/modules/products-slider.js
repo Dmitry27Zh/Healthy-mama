@@ -12,6 +12,6 @@
     MOBILE: 85.15,
   };
 
-  const initSlider = window.slider(sliderElement, slidesContainer, buttonPrevElement, buttonNextElement, MoveLengthToBreakpoints);
+  const initSlider = window.slider(sliderElement, slidesContainer, buttonPrevElement, buttonNextElement, MoveLengthToBreakpoints, 'products__slide--active');
   initSlider();
 })();

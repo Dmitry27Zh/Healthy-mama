@@ -1,0 +1,68 @@
+.slider-button {
+  position: absolute;
+  width: 2.76vw;
+  height: 2.76vw;
+  padding: 0;
+  background-color: $main-green;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    border-color: $main-green;
+
+    &::before {
+      border-color: $main-green;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0.52vw;
+    height: 0.52vw;
+    border-left: 2px solid $white;
+    border-bottom: 2px solid $white;
+    transform: rotate(45deg);
+  }
+
+  &--next {
+    &::before {
+      transform: rotate(-135deg);
+    }
+  }
+
+  @media (max-width: $tablet-width-max) {
+    width: 6.9vw;
+    height: 6.9vw;
+
+    &::before {
+      width: 1.3vw;
+      height: 1.3vw;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    width: 10.312vw;
+    height: 10.312vw;
+
+    &::before {
+      top: 0;
+      bottom: 0;
+      left: 4.5vw;
+      width: 2.125vw;
+      height: 2.125vw;
+      margin: auto;
+    }
+
+    &--next {
+      &::before {
+        left: auto;
+        right: 4.5vw;
+      }
+    }
+  }
+}

@@ -140,37 +140,12 @@
 }
 
 .products__button {
-  position: absolute;
   top: 9.062vw;
   left: 29.06vw;
-  padding: 0;
-  width: 2.76vw;
-  height: 2.76vw;
-  background-color: $main-green;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  outline: none;
-
-  &:hover,
-  &:focus {
-    background-color: $white;
-    border-color: $main-green;
-
-    &::before {
-      border-color: $main-green;
-    }
-  }
 
   &::before {
-    content: "";
-    position: absolute;
     top: 1.041vw;
     left: 1.25vw;
-    width: 0.52vw;
-    height: 0.52vw;
-    border-left: 2px solid $white;
-    border-bottom: 2px solid $white;
-    transform: rotate(45deg);
   }
 
   &--next {
@@ -180,21 +155,16 @@
     &::before {
       left: auto;
       right: 1.25vw;
-      transform: rotate(-135deg);
     }
   }
 
   @media (max-width: $tablet-width-max) {
     top: 22.65vw;
     left: 3.38vw;
-    width: 6.9vw;
-    height: 6.9vw;
 
     &::before {
       top: 2.6vw;
       left: 3.125vw;
-      width: 1.3vw;
-      height: 1.3vw;
     }
 
     &--next {

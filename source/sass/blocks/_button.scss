@@ -56,4 +56,19 @@
       background-size: 2.473vw 1.562vw;
     }
   }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 5.937vw 25.937vw 5.625vw 13.125vw;
+    width: 76.562vw;
+    border-width: 1.562vw;
+    border-radius: 20.312vw;
+    font-size: 4.375vw;
+
+    &::after {
+      right: 2.187vw;
+      width: 13.437vw;
+      height: 13.437vw;
+      background-size: 5.937vw 3.75vw;
+    }
+  }
 }
