@@ -14,15 +14,18 @@
   window.slider = (sliderElement, slidesContainer, prevButton, nextButton, moveLengthList, activeSlideClassName) => {
     let moveLength = null;
     let translateValue = 0;
+    let initializated = false;
 
     function getMoveLength() {
+      const currentBreakPoint = Object.keys(Breakpoints).find((breakpoint) => window.common.isInRange(Breakpoints[breakpoint], document.documentElement.clientWidth));
+      return moveLengthList[currentBreakPoint];
+    }
+
+    function setMoveLength() {
+      const moveLengthPerc = getMoveLength();
       const sliderWidth = sliderElement.offsetWidth;
-      for (let breakpoint in Breakpoints) {
-        if (window.common.isInRange(Breakpoints[breakpoint], sliderWidth)) {
-          moveLength = sliderWidth * moveLengthList[breakpoint] / 100;
-          break;
-        }
-      }
+      moveLength = sliderWidth * moveLengthPerc / 100;
+
     }
 
     function setTranslate(mode) {
@@ -75,12 +78,14 @@
       const slidesHalfQuantity = Math.floor(slides.length / 2);
       slides.slice(slidesHalfQuantity).reverse().forEach((slide) => {
         const slideCopy = slide.cloneNode(true);
+        slideCopy.classList.add('js-copy');
         slideCopy.classList.remove(activeSlideClassName);
         slidesContainer.prepend(slideCopy);
         resetTranslate(SliderMode.PREV);
       });
       slides.slice(0, slidesHalfQuantity).forEach((slide) => {
         const slideCopy = slide.cloneNode(true);
+        slideCopy.classList.add('js-copy');
         slideCopy.classList.remove(activeSlideClassName);
         slidesContainer.append(slideCopy);
       });
@@ -144,7 +149,7 @@
 
     function updateSlider() {
       const lastMoveLength = moveLength;
-      getMoveLength();
+      setMoveLength();
       if (lastMoveLength !== moveLength) {
         const translateValueProportion = translateValue / lastMoveLength;
         translateValue = translateValueProportion * moveLength;
@@ -152,8 +157,17 @@
       }
     }
 
-    return function () {
-      getMoveLength();
+    function removeSlider() {
+      moveLength = null;
+      translateValue = 0;
+      [...slidesContainer.children].filter((slide) => slide.classList.contains('js-copy')).forEach((slide) => slide.remove());
+      slidesContainer.style.transitionDuration = '';
+      slidesContainer.style.transform = '';
+      initializated = false;
+    }
+
+    function init() {
+      setMoveLength();
 
       addExtraSlides();
 
@@ -164,9 +178,25 @@
       nextButton.addEventListener('click', () => {
         toggleSlide(SliderMode.NEXT);
       });
+      initializated = true;
+    }
+
+    return function () {
+      if (!initializated && getMoveLength()) {
+        init();
+      }
 
       window.addEventListener('resize', () => {
-        updateSlider();
+        const updatedMoveLength = getMoveLength();
+        if (initializated) {
+          if (updatedMoveLength) {
+            updateSlider();
+          } else {
+            removeSlider();
+          }
+        } else if (updatedMoveLength) {
+          init();
+        }
       });
     };
   };
