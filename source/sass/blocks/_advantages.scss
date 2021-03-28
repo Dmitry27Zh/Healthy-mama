@@ -1,0 +1,130 @@
+.advantages {
+  padding-top: 10.625vw;
+  padding-bottom: 8.072vw;
+}
+
+.advantages__wrapper {
+  position: relative;
+  display: flex;
+  padding: 0 10.364vw;
+  background-color: $main-green;
+  background-image: url("../img/svg/circle.svg"),
+    url("../img/svg/circle.svg");
+  background-repeat: no-repeat;
+  background-position: -10.572vw -12.5vw, right -10.5272vw bottom -12.5vw;
+  background-size: 26.25vw auto, 26.25vw auto, 35vw auto;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: 35vw;
+    height: 100%;
+    background-image: linear-gradient(64.37deg, #27ae60 8.32%, rgba(255, 255, 255, 0) 82.9%),
+      url("../img/advantages-bg-desktop@1x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+    content: "";
+  }
+}
+
+.advantages__text {
+  margin-left: -0.52vw;
+  color: $white;
+
+  h2 {
+    margin-top: 3.541vw;
+    margin-bottom: 2.968vw;
+    text-align: left;
+    color: $white;
+  }
+}
+
+.advantages__columns {
+  display: flex;
+}
+
+.advantages__list {
+  width: 50%;
+  font-weight: 500;
+  font-size: 1.041vw;
+  line-height: 1.4;
+
+  &:nth-child(2n) {
+    margin-left: 1.3vw;
+  }
+}
+
+.advantages__item {
+  position: relative;
+  padding-left: 1.562vw;
+
+  &:not(:first-child) {
+    margin-top: 0.99vw;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+  }
+
+  &::before {
+    top: 0.417vw;
+    left: 0;
+    width: 0.677vw;
+    height: 0.572vw;
+    background-image: url("../img/svg/tick-small.svg");
+  }
+
+  &::after {
+    top: 0.26vw;
+    left: -0.517vw;
+    width: 1.51vw;
+    height: 1.25vw;
+    background-image: url("../img/svg/tick-big.svg");
+  }
+}
+
+.advantages__specialist {
+  position: relative;
+  margin-top: -10.625vw;
+  order: -1;
+}
+
+.advantages__specialist-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2.135vw;
+  box-sizing: border-box;
+  width: 18.072vw;
+  margin: auto;
+  padding: 0.468vw 2.083vw 0.312vw;
+  font-size: 0.83vw;
+  line-height: 1.4;
+  background-color: $white;
+  border: 0.052vw dashed $main-green;
+  border-radius: 3.385vw;
+  box-shadow: 0 0 0 0.26vw $white,
+    0 1.093vw 6.927vw rgba(17, 95, 0, 0.21);
+
+  p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  span {
+    margin-top: 0.26vw;
+    font-weight: normal;
+    font-size: 0.767vw;
+    color: $dark-green;
+  }
+}

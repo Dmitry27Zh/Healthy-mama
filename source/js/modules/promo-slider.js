@@ -21,7 +21,6 @@
       radioButtonElement.disabled = mode;
       if (radioButtonElement === radioButtonActiveElement) {
         radioButtonActiveElement.checked = !mode;
-        console.log(radioButtonElement.checked);
       }
     }
   };
