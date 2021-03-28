@@ -5,7 +5,6 @@
   const slidesContainer = sliderElement.querySelector('.promo__slider-list');
   const buttonPrevElement = sliderElement.querySelector('.promo__slider-button--prev');
   const buttonNextElement = sliderElement.querySelector('.promo__slider-button--next');
-  const radioButtonElements = sliderElement.querySelectorAll('[type="radio"][id^="promo"]');
   const MoveLengthToBreakpoints = {
     DESKTOP: null,
     TABLET: null,
@@ -13,8 +12,10 @@
   };
 
   const switchRadioButtons = (mode) => {
+    const radioButtonElements = sliderElement.querySelectorAll('[type="radio"][id^="promo"]');
     for (let radioButtonElement of radioButtonElements) {
       radioButtonElement.disabled = mode;
+
     }
   };
 

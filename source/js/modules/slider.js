@@ -78,6 +78,7 @@
       const slidesHalfQuantity = Math.floor(slides.length / 2);
       slides.slice(slidesHalfQuantity).reverse().forEach((slide) => {
         const slideCopy = slide.cloneNode(true);
+        window.common.offRadioButtons(slideCopy);
         slideCopy.classList.add('js-copy');
         slideCopy.classList.remove(activeSlideClassName);
         slidesContainer.prepend(slideCopy);
@@ -85,6 +86,7 @@
       });
       slides.slice(0, slidesHalfQuantity).forEach((slide) => {
         const slideCopy = slide.cloneNode(true);
+        window.common.offRadioButtons(slideCopy);
         slideCopy.classList.add('js-copy');
         slideCopy.classList.remove(activeSlideClassName);
         slidesContainer.append(slideCopy);
