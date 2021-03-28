@@ -59,15 +59,13 @@
     function restoreSlide(mode) {
       switch (mode) {
         case SliderMode.PREV:
-          const lastSlide = slidesContainer.children[slidesContainer.children.length - 1];
-          slidesContainer.prepend(lastSlide.cloneNode(true));
-          lastSlide.remove();
+          const lastSlide = [...slidesContainer.children].pop();
+          slidesContainer.prepend(lastSlide);
           resetTranslate(mode);
           break;
         case SliderMode.NEXT:
-          const firstSlide = slidesContainer.children[0];
-          slidesContainer.append(firstSlide.cloneNode(true));
-          firstSlide.remove();
+          const firstSlide = [...slidesContainer.children].shift();
+          slidesContainer.append(firstSlide);
           resetTranslate(mode);
           break;
       }
@@ -78,7 +76,6 @@
       const slidesHalfQuantity = Math.floor(slides.length / 2);
       slides.slice(slidesHalfQuantity).reverse().forEach((slide) => {
         const slideCopy = slide.cloneNode(true);
-        window.common.offRadioButtons(slideCopy);
         slideCopy.classList.add('js-copy');
         slideCopy.classList.remove(activeSlideClassName);
         slidesContainer.prepend(slideCopy);
@@ -86,7 +83,6 @@
       });
       slides.slice(0, slidesHalfQuantity).forEach((slide) => {
         const slideCopy = slide.cloneNode(true);
-        window.common.offRadioButtons(slideCopy);
         slideCopy.classList.add('js-copy');
         slideCopy.classList.remove(activeSlideClassName);
         slidesContainer.append(slideCopy);
