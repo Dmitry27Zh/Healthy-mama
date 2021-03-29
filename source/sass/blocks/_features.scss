@@ -5,6 +5,20 @@
   background-repeat: no-repeat;
   background-position: top 15.656vw left 0, top -6.667vw left, top 7.16vw left 4.74vw;
   background-size: 28.125vw auto, cover, 66.822vw auto;
+
+  @media (max-width: $tablet-width-max) {
+    padding-top: 112.369vw;
+    background-image: url("../img/features-bg-tablet@1x.png"), url("../img/advantage-girls.png");
+    background-position: top 11.458vw left, top 7.291vw left -16.016vw;
+    background-size: 100vw auto, 145.964vw auto;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-top: 132.5vw;
+    background-image: url("../img/features-bg-mobile@1x.png"), url("../img/advantage-girls.png");
+    background-position: top 11.458vw left, top left -49.016vw;
+    background-size: 100vw auto, 213.437vw auto;
+  }
 }
 
 .features__inner {
@@ -14,6 +28,23 @@
     margin-bottom: 4.427vw;
     text-align: left;
   }
+
+  @media (max-width: $tablet-width-max) {
+    margin: 0 13.932vw;
+
+    h2 {
+      margin-bottom: 11.067vw;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-left: 4.375vw;
+    margin-right: 10vw;
+
+    h2 {
+      margin-bottom: 11.875vw;
+    }
+  }
 }
 
 .features__list {
@@ -22,6 +53,7 @@
 
 .features__item {
   position: relative;
+  box-sizing: border-box;
   padding-left: 4.218vw;
 
   h3 {
@@ -81,6 +113,59 @@
 
     &::before {
       background-image: url("../img/svg/health-care.svg");
+    }
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding-left: 10.546vw;
+
+    h3 {
+      margin-bottom: 1.432vw;
+      font-size: 2.604vw;
+    }
+
+    p {
+      font-size: 2.343vw;
+    }
+
+    &::before {
+      width: 7.812vw;
+      height: 7.812vw;
+      background-size: 3.906vw 3.906vw;
+      box-shadow: 0 0.52vw 4.557vw rgba(25, 130, 189, 0.18);
+    }
+
+    &:not(:first-child) {
+      margin-top: 5.078vw;
+    }
+
+    &--individuality {
+      width: 93.4%;
+    }
+
+    &--useful {
+      p {
+        font-size: 2.083vw;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-left: 15vw;
+
+    h3 {
+      font-size: 5vw;
+    }
+
+    p {
+      font-size: 4.375vw;
+    }
+
+    &::before {
+      width: 11.196vw;
+      height: 11.196vw;
+      background-size: 5.6vw 5.6vw;
+      box-shadow: 0 1.25vw 10.937vw rgba(25, 130, 189, 0.18);
     }
   }
 }
