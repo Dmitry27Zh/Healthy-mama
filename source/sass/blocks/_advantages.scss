@@ -1,6 +1,14 @@
 .advantages {
   padding-top: 10.625vw;
   padding-bottom: 8.072vw;
+
+  @media (max-width: $tablet-width-max) {
+    padding-bottom: 28.776vw;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-bottom: 44.687vw;
+  }
 }
 
 .advantages__wrapper {
@@ -28,6 +36,22 @@
     opacity: 0.1;
     content: "";
   }
+
+  @media (max-width: $tablet-width-max) {
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../img/svg/circle.svg");
+    background-position: right -25.39vw bottom -28.766vw;
+    background-size: 65.625vw auto;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 0;
+  }
 }
 
 .advantages__text {
@@ -40,10 +64,36 @@
     text-align: left;
     color: $white;
   }
+
+  @media (max-width: $tablet-width-max) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      max-width: 72.697%;
+      margin-top: 7.812vw;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 0 8.75vw;
+
+    h2 {
+      max-width: 100%;
+      margin-top: 17.812vw;
+      margin-left: 2.5vw;
+      margin-bottom: 12.187vw;
+    }
+  }
 }
 
 .advantages__columns {
   display: flex;
+
+  @media (max-width: $tablet-width-max) {
+    flex-direction: column;
+  }
 }
 
 .advantages__list {
@@ -54,6 +104,25 @@
 
   &:nth-child(2n) {
     margin-left: 1.3vw;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    width: 90%;
+    font-size: 2.604vw;
+
+    &:nth-child(2n) {
+      margin-top: 2.473vw;
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    width: 100%;
+    font-size: 6.25vw;
+
+    &:nth-child(2n) {
+      margin-top: 5.937vw;
+    }
   }
 }
 
@@ -88,12 +157,67 @@
     height: 1.25vw;
     background-image: url("../img/svg/tick-big.svg");
   }
+
+  @media (max-width: $tablet-width-max) {
+    margin-left: 2.734vw;
+    padding-left: 3.906vw;
+
+    &:not(:first-child) {
+      margin-top: 2.473vw;
+    }
+
+    &::before {
+      top: 1.302vw;
+      width: 1.692vw;
+      height: 1.432vw;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-left: 0;
+    padding-left: 10vw;
+
+    &:not(:first-child) {
+      margin-top: 5.937vw;
+    }
+
+    &::before {
+      top: 3.125vw;
+      width: 4.062vw;
+      height: 3.437vw;
+    }
+  }
 }
 
 .advantages__specialist {
   position: relative;
+  width: 32.604vw;
+  height: 30.312vw;
   margin-top: -10.625vw;
   order: -1;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    order: 0;
+    width: 70.052vw;
+    height: 65.104vw;
+    margin-top: 0;
+    margin-bottom: -9.505vw;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    width: 104.375vw;
+    height: 96.875vw;
+    margin-bottom: -3.75vw;
+  }
 }
 
 .advantages__specialist-info {
@@ -126,5 +250,39 @@
     font-weight: normal;
     font-size: 0.767vw;
     color: $dark-green;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    bottom: -4.557vw;
+    width: 38.63vw;
+    padding: 0.99vw 2.765vw 0.609vw 3.434vw;
+    font-size: 1.953vw;
+    border-width: 0.13vw;
+    border-radius: 8.463vw;
+    box-shadow: 0 0 0 0.52vw $white,
+      0 2.734vw 17.317vw rgba(17, 95, 0, 0.21);
+
+    span {
+      margin-top: 0.52vw;
+      font-size: 1.952vw;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    top: 100%;
+    bottom: auto;
+    width: 84.375vw;
+    min-height: 19.687vw;
+    padding: 2.812vw 4.687vw 3.437vw 5.937vw;
+    font-size: 4.375vw;
+    border-width: 0.312vw;
+    border-radius: 20.312vw;
+    box-shadow: 0 0 0 1.25vw $white,
+      0 0.065vw 41.562vw rgba(17, 95, 0, 0.21);
+
+    span {
+      margin-top: 0;
+      font-size: 4.375vw;
+    }
   }
 }
