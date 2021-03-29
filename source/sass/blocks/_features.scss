@@ -1,0 +1,86 @@
+.features {
+  padding-top: 12.187vw;
+  padding-bottom: 19.739vw;
+  background-image: url("../img/tree@1x.png"), url("../img/features-bg-desktop@1x.png"), url("../img/advantage-girls.png");
+  background-repeat: no-repeat;
+  background-position: top 15.656vw left 0, top -6.667vw left, top 7.16vw left 4.74vw;
+  background-size: 28.125vw auto, cover, 66.822vw auto;
+}
+
+.features__inner {
+  margin: 0 17.708vw 0 52.552vw;
+
+  h2 {
+    margin-bottom: 4.427vw;
+    text-align: left;
+  }
+}
+
+.features__list {
+  line-height: 1.18;
+}
+
+.features__item {
+  position: relative;
+  padding-left: 4.218vw;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 0.572vw;
+    font-size: 1.041vw;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.937vw;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0.26vw;
+    left: 0;
+    width: 3.125vw;
+    height: 3.125vw;
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.562vw 1.562vw;
+    border-radius: 50%;
+    box-shadow: 0 0.208vw 1.822vw rgba(25, 130, 189, 0.18);
+    content: "";
+  }
+
+  &:not(:first-child) {
+    margin-top: 1.927vw;
+  }
+
+  &--eco {
+    &::before {
+      background-image: url("../img/svg/leaf.svg");
+    }
+  }
+
+  &--balance {
+    &::before {
+      background-image: url("../img/svg/balance.svg");
+    }
+  }
+
+  &--individuality {
+    width: 85%;
+
+    &::before {
+      background-image: url("../img/svg/curved-arrow.svg");
+    }
+  }
+
+  &--useful {
+    p {
+      font-size: 0.833vw;
+    }
+
+    &::before {
+      background-image: url("../img/svg/health-care.svg");
+    }
+  }
+}

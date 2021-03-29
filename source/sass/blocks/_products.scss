@@ -1,6 +1,4 @@
 .products {
-  padding-top: 50px;
-
   h2 {
     width: 24.94vw;
     margin: 0 auto;
@@ -24,11 +22,11 @@
 .products__slider {
   position: relative;
   overflow: hidden;
+  padding-bottom: 4.322vw;
 }
 
 .products__slider-list {
   display: flex;
-  align-items: flex-start;
   position: relative;
   right: ((34.58vw * 3 + 0.88vw * 2) - 100vw) / 2;
 
@@ -48,6 +46,7 @@
   margin-right: 0.88vw;
   flex-shrink: 0;
   opacity: 0.3;
+  box-shadow: 0 0.208vw 4.322vw rgba(30, 30, 30, 0.07);
   transition: opacity 0.3s;
 
   &--active {
