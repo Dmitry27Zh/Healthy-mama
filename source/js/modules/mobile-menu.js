@@ -8,6 +8,7 @@
   const menuToggleElement = headerWrapperElement.querySelector('.header__toggle');
   const mainNavElement = headerElement.querySelector('.main-nav');
   const mainElement = document.querySelector('main');
+  const footerElement = document.querySelector('.footer');
   let isToggleClickActive = false;
 
   const handleToggleClick = () => {
@@ -22,6 +23,9 @@
     }
     if (mainElement) {
       mainElement.classList.toggle('inactive');
+    }
+    if (footerElement) {
+      footerElement.classList.toggle('inactive');
     }
   };
 
