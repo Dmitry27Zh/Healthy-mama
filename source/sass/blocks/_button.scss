@@ -2,8 +2,11 @@
   position: relative;
   box-sizing: border-box;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 12.656vw;
-  padding: 0.989vw 4.322vw 0.937vw 2.187vw;
+  min-height: 3.385vw;
+  padding: 0.521vw 2.865vw 0.573vw 0.781vw;
   background-color: $main-green;
   border: 0.26vw solid $white;
   border-radius: 3.385vw;
@@ -11,6 +14,7 @@
   font-size: 0.729vw;
   line-height: 1.4;
   font-weight: 700;
+  text-align: center;
   color: $white;
 
   &::after {
@@ -43,8 +47,9 @@
   }
 
   @media (max-width: $tablet-width-max) {
-    padding: 2.473vw 10.807vw 2.343vw 5.468vw;
+    padding: 1.432vw 7.161vw 1.563vw 1.953vw;
     width: 31.9vw;
+    min-height: 8.464vw;
     border-width: 0.651vw;
     border-radius: 8.463vw;
     font-size: 1.822vw;
@@ -58,8 +63,9 @@
   }
 
   @media (max-width: $mobile-width-max) {
-    padding: 5.937vw 25.937vw 5.625vw 13.125vw;
+    padding: 3.438vw 17.188vw 3.438vw 4.688vw;
     width: 76.562vw;
+    min-height: 20.313vw;
     border-width: 1.562vw;
     border-radius: 20.312vw;
     font-size: 4.375vw;

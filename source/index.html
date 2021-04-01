@@ -199,10 +199,41 @@
             </ul>
           </div>
         </section>
+        <section class="order section">
+          <h2>Хотите получить персональное меню?</h2>
+          <p>Оставьте заявку и наш оператор свяжется с Вами для уточнения деталей</p>
+          <form class="order-form order__form" action="https://echo.htmlacademy.ru" method="post">
+            <div class="order-form__group">
+              <label class="visually-hidden" for="name">Ваше имя</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Ваше имя"
+                pattern="^([A-Za-zА-Яа-яЁё]+\s?'?-?)+$"
+                autocomplete="on"
+                required
+              />
+            </div>
+            <div class="order-form__group">
+              <label class="visually-hidden" for="phone">Ваш телефон</label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                pattern="\+7\s\([0-9]{3}\)\s\d{3}[-]\d{2}[-]\d{2}"
+                placeholder="Ваш телефон"
+                autocomplete="on"
+                required
+              />
+            </div>
+            <button class="order-form__button button" type="submit">Оформить заказ</button>
+          </form>
+        </section>
       </main>
       <footer class="footer">
         <a class="footer__logo logo">Здоровая мама</a>
-        <ul class="footer__menu menu list-reset">
+        <ul class="footer__menu menu menu--footer list-reset">
           <li class="footer__menu-item menu__item">
             <a href="#" class="menu__link">Важность правильного питания</a>
           </li>

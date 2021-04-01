@@ -1,0 +1,46 @@
+.order {
+  p {
+    margin-top: 1.145vw;
+    margin-bottom: 3.385vw;
+    line-height: 1.18;
+    text-align: center;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      max-width: 60%;
+    }
+
+    p {
+      margin-top: 2.864vw;
+      margin-bottom: 9.375vw;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin: 0 1.875vw;
+
+    h2 {
+      max-width: 80%;
+    }
+
+    p {
+      margin-top: 4.687vw;
+      margin-bottom: 11.875vw;
+      font-size: 4.375vw;
+    }
+  }
+}
+
+.order__form {
+  margin-left: 18.646vw;
+  margin-right: 15.625vw;
+
+  @media (max-width: $tablet-width-max) {
+    margin: 0;
+  }
+}

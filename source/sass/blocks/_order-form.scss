@@ -1,0 +1,102 @@
+.order-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  input {
+    box-sizing: border-box;
+    width: 20.99vw;
+    height: 2.969vw;
+    padding-left: 2.292vw;
+    padding-right: 1.51vw;
+    color: inherit;
+    background-color: $light-gray;
+    border: 0.052vw solid transparent;
+    border-radius: 3.385vw;
+    outline: none;
+    transition-property: background-color,
+      border-color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      border-color: $main-green;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &::placeholder {
+      font-weight: 600;
+      font-size: 0.729vw;
+      line-height: 1.4;
+      font-family: $font-family-main;
+      color: $lime-green;
+      transition-property: opacity;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+    }
+  }
+
+  @media (max-width: $tablet-width-max) {
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      width: 52.474vw;
+      height: 7.422vw;
+      padding-left: 5.729vw;
+      padding-right: 3.776vw;
+      border-width: 0.13vw;
+      border-radius: 8.464vw;
+
+      &::placeholder {
+        font-size: 1.822vw;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    input {
+      width: 87.187vw;
+      height: 12.813vw;
+      padding-left: 9.375vw;
+      padding-right: 4.688vw;
+      border-width: 0.313vw;
+      border-radius: 20.313vw;
+
+      &::placeholder {
+        font-size: 4.375vw;
+      }
+    }
+  }
+}
+
+.order-form__group {
+  @media (max-width: $tablet-width-max) {
+    + .order-form__group {
+      margin-top: 2.865vw;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    + .order-form__group {
+      margin-top: 3.125vw;
+    }
+  }
+}
+
+.order-form__button {
+  @media (max-width: $tablet-width-max) {
+    margin-top: 2.865vw;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 6.562vw;
+  }
+}

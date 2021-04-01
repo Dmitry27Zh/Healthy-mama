@@ -16,6 +16,11 @@
 .footer__logo {
   margin-bottom: 2.083vw;
 
+  &:hover,
+  &:focus {
+    color: $graphite;
+  }
+
   @media (max-width: $tablet-width-max) {
     margin-bottom: 5.208vw;
   }
@@ -26,6 +31,7 @@
 }
 
 .footer__menu {
+  margin-right: -5.73vw;
   margin-bottom: 2.057vw;
 
   @media (max-width: $tablet-width-max) {
@@ -73,6 +79,11 @@
 
 .footer__condition-link {
   font-size: 0.625vw;
+
+  &:hover,
+  &:focus {
+    color: $graphite;
+  }
 
   @media (max-width: $tablet-width-max) {
     font-size: 1.562vw;
