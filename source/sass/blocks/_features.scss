@@ -1,23 +1,35 @@
 .features {
   padding-top: 12.187vw;
   padding-bottom: 19.739vw;
-  background-image: url("../img/tree@1x.png"), url("../img/features-bg-desktop@1x.png"), url("../img/advantage-girls.png");
+  background-image: url("../img/tree@1x.png"), url("../img/features-bg-desktop@1x.png"), url("../img/advantage-girls@1x.png");
   background-repeat: no-repeat;
   background-position: top 15.656vw left 0, top -6.667vw left, top 7.16vw left 4.74vw;
   background-size: 28.125vw auto, cover, 66.822vw auto;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/tree@2x.png"), url("../img/features-bg-desktop@2x.png"), url("../img/advantage-girls@2x.png");
+  }
+
   @media (max-width: $tablet-width-max) {
     padding-top: 112.369vw;
-    background-image: url("../img/features-bg-tablet@1x.png"), url("../img/advantage-girls.png");
+    background-image: url("../img/features-bg-tablet@1x.png"), url("../img/advantage-girls@1x.png");
     background-position: top 11.458vw left, top 7.291vw left -16.016vw;
     background-size: 100vw auto, 145.964vw auto;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/features-bg-tablet@2x.png"), url("../img/advantage-girls@2x.png");
+    }
   }
 
   @media (max-width: $mobile-width-max) {
     padding-top: 132.5vw;
-    background-image: url("../img/features-bg-mobile@1x.png"), url("../img/advantage-girls.png");
+    background-image: url("../img/features-bg-mobile@1x.png"), url("../img/advantage-girls@1x.png");
     background-position: top 11.458vw left, top left -49.016vw;
     background-size: 100vw auto, 213.437vw auto;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/features-bg-mobile@2x.png"), url("../img/advantage-girls@2x.png");
+    }
   }
 }
 

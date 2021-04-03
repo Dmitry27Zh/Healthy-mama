@@ -1,6 +1,5 @@
 .advantages {
   padding-top: 10.625vw;
-  padding-bottom: 8.072vw;
 
   @media (max-width: $tablet-width-max) {
     padding-bottom: 28.776vw;
@@ -35,6 +34,11 @@
     background-size: cover;
     opacity: 0.1;
     content: "";
+
+    @media (min-resolution: 2dppx) {
+      background-image: linear-gradient(64.37deg, #27ae60 8.32%, rgba(255, 255, 255, 0) 82.9%),
+        url("../img/advantages-bg-desktop@2x.png");
+    }
   }
 
   @media (max-width: $tablet-width-max) {

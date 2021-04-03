@@ -1,4 +1,13 @@
 .products {
+  padding-top: 8.072vw;
+  background-image: url("../img/products-bg@1x.png");
+  background-repeat: no-repeat;
+  background-size: 34.583vw auto;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/products-bg@2x.png");
+  }
+
   h2 {
     width: 24.94vw;
     margin: 0 auto;
@@ -6,6 +15,9 @@
   }
 
   @media (max-width: $tablet-width-max) {
+    padding-top: 0;
+    background: none;
+
     h2 {
       width: 62.86vw;
     }
