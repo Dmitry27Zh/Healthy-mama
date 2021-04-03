@@ -281,6 +281,30 @@
 	      initializated = true;
 	    }
 
+	    function touchStartHandler(startEvt) {
+	      const startCoordX = startEvt.touches[0].clientX;
+	      let newCoordX = null;
+
+	      function touchMoveHandler(moveEvt) {
+	        newCoordX = moveEvt.touches[0].clientX;
+	      }
+
+	      sliderElement.addEventListener('touchmove', touchMoveHandler);
+	      sliderElement.addEventListener('touchend', touchEndHandler);
+
+	      function touchEndHandler() {
+	        const moveX = newCoordX - startCoordX;
+	        if (moveX > 0) {
+	          toggleSlide(SliderMode.PREV);
+	        }
+	        if (moveX < 0) {
+	          toggleSlide(SliderMode.NEXT);
+	        }
+	        sliderElement.removeEventListener('touchmove', touchMoveHandler);
+	        sliderElement.removeEventListener('touchend', touchEndHandler);
+	      }
+	    }
+
 	    return function () {
 	      if (!initializated && getMoveLength()) {
 	        init();
@@ -298,6 +322,8 @@
 	          init();
 	        }
 	      });
+
+	      sliderElement.addEventListener('touchstart', touchStartHandler);
 	    };
 	  };
 	})();

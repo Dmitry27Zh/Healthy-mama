@@ -42,6 +42,7 @@ gulp.task('js-main', function () {
     'source/js/modules/main.js',
   ])
     .pipe(webpack({
+      watch: true,
       mode: 'production',
       output: {
         filename: './main.js',
