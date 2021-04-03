@@ -38,6 +38,7 @@ gulp.task('js-main', function () {
     'source/js/modules/products-slider.js',
     'source/js/modules/promo-slider.js',
     'source/js/modules/mobile-menu.js',
+    'source/js/modules/phone-validation.js',
     'source/js/modules/main.js',
   ])
     .pipe(webpack({
@@ -48,7 +49,7 @@ gulp.task('js-main', function () {
       },
       devtool: false
     }))
-    .pipe(gulp.dest('build/js/'));
+    .pipe(gulp.dest('build/js'));
 });
 
 gulp.task('js-vendor', function () {
@@ -59,7 +60,7 @@ gulp.task('js-vendor', function () {
         filename: './vendor.js'
       }
     }))
-    .pipe(gulp.dest('build/js/'));
+    .pipe(gulp.dest('build/js'));
 });
 
 gulp.task('server', function () {
@@ -119,8 +120,7 @@ gulp.task('copy', function () {
     'source/fonts/**/*.{woff,woff2}',
     'source/img/**',
     'source/css/normalize.css',
-    'source/js/**',
-    'source//*.ico'
+    'source/*.ico'
   ], {
     base: 'source'
   })
@@ -131,5 +131,5 @@ gulp.task('clean', function () {
   return del('build');
 });
 
-gulp.task('build', gulp.series('clean', 'copy', 'css', 'sprite', 'images', 'webp', 'html'));
+gulp.task('build', gulp.series('clean', 'copy', 'css', 'js-vendor', 'js-main', 'sprite', 'images', 'webp', 'html'));
 gulp.task('start', gulp.series('build', 'server'));
