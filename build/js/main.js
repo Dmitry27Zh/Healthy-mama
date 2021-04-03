@@ -284,21 +284,29 @@
 	    function touchStartHandler(startEvt) {
 	      const startCoordX = startEvt.touches[0].clientX;
 	      let newCoordX = null;
+	      let moveX = null;
+	      let temporaryTranslateValue = translateValue;
 
 	      function touchMoveHandler(moveEvt) {
 	        newCoordX = moveEvt.touches[0].clientX;
+	        moveX = newCoordX - startCoordX;
+	        slidesContainer.style.transform = `translateX(${temporaryTranslateValue + moveX}px)`;
 	      }
 
 	      sliderElement.addEventListener('touchmove', touchMoveHandler);
 	      sliderElement.addEventListener('touchend', touchEndHandler);
 
 	      function touchEndHandler() {
-	        const moveX = newCoordX - startCoordX;
-	        if (moveX > 0) {
-	          toggleSlide(SliderMode.PREV);
-	        }
-	        if (moveX < 0) {
-	          toggleSlide(SliderMode.NEXT);
+	        if (Math.abs(moveX) >= moveLength / 2) {
+	          slidesContainer.style.transform = `translateX(${translateValue}px)`;
+	          if (moveX > 0) {
+	            toggleSlide(SliderMode.PREV);
+	          }
+	          if (moveX < 0) {
+	            toggleSlide(SliderMode.NEXT);
+	          }
+	        } else {
+	          slidesContainer.style.transform = `translateX(${translateValue}px)`;
 	        }
 	        sliderElement.removeEventListener('touchmove', touchMoveHandler);
 	        sliderElement.removeEventListener('touchend', touchEndHandler);
