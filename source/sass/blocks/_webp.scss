@@ -60,7 +60,7 @@
   }
 
   .promo {
-    background: url("../img/promo-bg-desktop@1x.webp") no-repeat;
+    background-image: url("../img/promo-bg-desktop@1x.webp");
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/promo-bg-desktop@2x.webp");
