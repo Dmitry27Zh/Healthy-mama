@@ -1,2 +1,4 @@
 webpack.config.js
 prettier.config.js
+gulpfile.js
+package.json
