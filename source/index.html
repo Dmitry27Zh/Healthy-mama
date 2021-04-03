@@ -17,13 +17,13 @@
         <nav class="header__nav main-nav">
           <ul class="main-nav__list menu list-reset">
             <li class="main-nav__item menu__item">
-              <a href="#" class="menu__link">Важность правильного питания</a>
+              <a href="#" class="menu__link link">Важность правильного питания</a>
             </li>
             <li class="main-nav__item menu__item">
-              <a href="#" class="menu__link">Почему мы?</a>
+              <a href="#" class="menu__link link">Почему мы?</a>
             </li>
             <li class="main-nav__item menu__item">
-              <a href="#" class="menu__link">Где заказать?</a>
+              <a href="#" class="menu__link link">Где заказать?</a>
             </li>
           </ul>
         </nav>
@@ -199,49 +199,64 @@
             </ul>
           </div>
         </section>
-        <section class="order section">
-          <h2>Хотите получить персональное меню?</h2>
-          <p>Оставьте заявку и наш оператор свяжется с Вами для уточнения деталей</p>
-          <form class="order-form order__form" action="https://echo.htmlacademy.ru" method="post">
-            <div class="order-form__group">
-              <label class="visually-hidden" for="name">Ваше имя</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Ваше имя"
-                pattern="^([A-Za-zА-Яа-яЁё]+\s?'?-?)+$"
-                autocomplete="on"
-                required
+        <div class="bg-wrapper">
+          <section class="instagram section">
+            <h2>Наш Instagram</h2>
+            <p><a class="instagram__link link" href="#">Подписывайтесь</a>, чтобы быть в курсе последних новостей</p>
+            <picture>
+              <img
+                src="img/instagram-images@1x.png"
+                srcset="img/instagram-images@2x.png"
+                width="1920"
+                height="1172"
+                alt="Фотографии"
               />
-            </div>
-            <div class="order-form__group">
-              <label class="visually-hidden" for="phone">Ваш телефон</label>
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                pattern="\+7\s\([0-9]{3}\)\s\d{3}[-]\d{2}[-]\d{2}"
-                placeholder="Ваш телефон"
-                autocomplete="on"
-                required
-              />
-            </div>
-            <button class="order-form__button button" type="submit">Оформить заказ</button>
-          </form>
-        </section>
+            </picture>
+          </section>
+          <section class="order section">
+            <h2>Хотите получить персональное меню?</h2>
+            <p>Оставьте заявку и наш оператор свяжется с Вами для уточнения деталей</p>
+            <form class="order-form order__form" action="https://echo.htmlacademy.ru" method="post">
+              <div class="order-form__group">
+                <label class="visually-hidden" for="name">Ваше имя</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Ваше имя"
+                  pattern="^([A-Za-zА-Яа-яЁё]+\s?'?-?)+$"
+                  autocomplete="on"
+                  required
+                />
+              </div>
+              <div class="order-form__group">
+                <label class="visually-hidden" for="phone">Ваш телефон</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  pattern="\+7\s\([0-9]{3}\)\s\d{3}[-]\d{2}[-]\d{2}"
+                  placeholder="Ваш телефон"
+                  autocomplete="on"
+                  required
+                />
+              </div>
+              <button class="order-form__button button" type="submit">Оформить заказ</button>
+            </form>
+          </section>
+        </div>
       </main>
       <footer class="footer">
         <a class="footer__logo logo">Здоровая мама</a>
         <ul class="footer__menu menu menu--footer list-reset">
           <li class="footer__menu-item menu__item">
-            <a href="#" class="menu__link">Важность правильного питания</a>
+            <a href="#" class="menu__link link">Важность правильного питания</a>
           </li>
           <li class="footer__menu-item menu__item">
-            <a href="#" class="menu__link">Почему мы?</a>
+            <a href="#" class="menu__link link">Почему мы?</a>
           </li>
           <li class="footer__menu-item menu__item">
-            <a href="#" class="menu__link">Где заказать?</a>
+            <a href="#" class="menu__link link">Где заказать?</a>
           </li>
         </ul>
         <ul class="footer__conditions list-reset">

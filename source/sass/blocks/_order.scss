@@ -2,8 +2,6 @@
   p {
     margin-top: 1.145vw;
     margin-bottom: 3.385vw;
-    line-height: 1.18;
-    text-align: center;
   }
 
   @media (max-width: $tablet-width-max) {
@@ -31,7 +29,6 @@
     p {
       margin-top: 4.687vw;
       margin-bottom: 11.875vw;
-      font-size: 4.375vw;
     }
   }
 }

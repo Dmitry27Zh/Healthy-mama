@@ -1,0 +1,9 @@
+.link {
+  transition-duration: 0.4s;
+  transition-property: color, border-color;
+
+  &:hover,
+  &:focus {
+    color: $main-green;
+  }
+}

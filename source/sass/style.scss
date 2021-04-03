@@ -2,6 +2,7 @@
 @import "utils/_variables";
 @import "utils/_global";
 @import "utils/_list-reset";
+@import "blocks/_link.scss";
 @import "blocks/_inactive";
 @import "blocks/_content-wrapper";
 @import "blocks/_slider-button";
@@ -15,6 +16,8 @@
 @import "blocks/advantages";
 @import "blocks/_products";
 @import "blocks/_features";
+@import "blocks/_instagram";
 @import "blocks/_order";
 @import "blocks/_order-form";
 @import "blocks/_footer";
+@import "blocks/bg-wrapper";

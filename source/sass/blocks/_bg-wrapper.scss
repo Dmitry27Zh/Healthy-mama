@@ -1,0 +1,27 @@
+.bg-wrapper {
+  padding-bottom: 8.697vw;
+  background-image: url("../img/instagram-bg-left@1x.png"), url("../img/instagram-bg-right@1x.png");
+  background-repeat: no-repeat;
+  background-position: top 8.125vw left, right bottom;
+  background-size: 50.729vw auto;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/instagram-bg-left@2x.png"), url("../img/instagram-bg-right@2x.png");
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding-bottom: 40.875vw;
+    background-image: url("../img/instagram-bg-right@1x.png");
+    background-position: left -4.166vw bottom 6.51vw;
+    background-size: 120.52vw auto;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/instagram-bg-left@2x.png");
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-bottom: 23.75vw;
+    background: none;
+  }
+}

@@ -15,4 +15,14 @@
       font-size: 6.875vw;
     }
   }
+
+  > p {
+    margin: 0;
+    line-height: 1.18;
+    text-align: center;
+
+    @media (max-width: $mobile-width-max) {
+      font-size: 4.375vw;
+    }
+  }
 }
