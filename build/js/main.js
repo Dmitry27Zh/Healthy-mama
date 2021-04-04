@@ -105,6 +105,7 @@
 	(function () {
 	  const TRANSITION_DURATION = '1s';
 	  const UPDATE_TIMEOUT = 1000;
+	  const TOUCH_DELAY = 300;
 
 	  const SliderMode = {
 	    PREV: 'prev',
@@ -281,32 +282,49 @@
 	      initializated = true;
 	    }
 
+	    function swipeSlide(moveX) {
+	      if (moveX > 0) {
+	        toggleSlide(SliderMode.PREV);
+	      }
+	      if (moveX < 0) {
+	        toggleSlide(SliderMode.NEXT);
+	      }
+	    }
+
+	    function longTouchHandler(moveX) {
+	      if (Math.abs(moveX) >= moveLength / 2) {
+	        slidesContainer.style.transform = `translateX(${translateValue}px)`;
+	        swipeSlide(moveX);
+	      } else {
+	        slidesContainer.style.transform = `translateX(${translateValue}px)`;
+	      }
+	    }
+
 	    function touchStartHandler(startEvt) {
 	      const startCoordX = startEvt.touches[0].clientX;
 	      let newCoordX = null;
 	      let moveX = null;
 	      let temporaryTranslateValue = translateValue;
+	      const startTime = new Date();
+	      let currentTime = null;
 
 	      function touchMoveHandler(moveEvt) {
 	        newCoordX = moveEvt.touches[0].clientX;
 	        moveX = newCoordX - startCoordX;
-	        slidesContainer.style.transform = `translateX(${temporaryTranslateValue + moveX}px)`;
+	        currentTime = new Date();
+	        if (currentTime - startTime >= TOUCH_DELAY) {
+	          slidesContainer.style.transform = `translateX(${temporaryTranslateValue + moveX}px)`;
+	        }
 	      }
 
 	      sliderElement.addEventListener('touchmove', touchMoveHandler);
 	      sliderElement.addEventListener('touchend', touchEndHandler);
 
 	      function touchEndHandler() {
-	        if (Math.abs(moveX) >= moveLength / 2) {
-	          slidesContainer.style.transform = `translateX(${translateValue}px)`;
-	          if (moveX > 0) {
-	            toggleSlide(SliderMode.PREV);
-	          }
-	          if (moveX < 0) {
-	            toggleSlide(SliderMode.NEXT);
-	          }
+	        if (currentTime - startTime < TOUCH_DELAY && Math.abs(moveX) >= 20) {
+	          swipeSlide(moveX);
 	        } else {
-	          slidesContainer.style.transform = `translateX(${translateValue}px)`;
+	          longTouchHandler(moveX);
 	        }
 	        sliderElement.removeEventListener('touchmove', touchMoveHandler);
 	        sliderElement.removeEventListener('touchend', touchEndHandler);
