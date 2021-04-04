@@ -24,6 +24,8 @@
   }
 
   @media (max-width: $mobile-width-max) {
+    background: none;
+
     h2 {
       width: 85%;
       margin-bottom: 13.12vw;

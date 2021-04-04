@@ -25,6 +25,10 @@
         background-image: url("../img/instagram-bg-left@2x.webp");
       }
     }
+
+    @media (max-width: $mobile-width-max) {
+      background: none;
+    }
   }
 
   .features {
@@ -56,6 +60,10 @@
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/products-bg@2x.webp");
+    }
+
+    @media (max-width: $mobile-width-max) {
+      background: none;
     }
   }
 

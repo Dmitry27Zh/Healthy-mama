@@ -106,6 +106,7 @@
 	  const TRANSITION_DURATION = '1s';
 	  const UPDATE_TIMEOUT = 1000;
 	  const TOUCH_DELAY = 300;
+	  const MIN_SWIPE_LENGTH = 50;
 
 	  const SliderMode = {
 	    PREV: 'prev',
@@ -292,28 +293,35 @@
 	    }
 
 	    function longTouchHandler(moveX) {
+	      slidesContainer.style.transform = `translateX(${translateValue}px)`;
 	      if (Math.abs(moveX) >= moveLength / 2) {
-	        slidesContainer.style.transform = `translateX(${translateValue}px)`;
 	        swipeSlide(moveX);
-	      } else {
-	        slidesContainer.style.transform = `translateX(${translateValue}px)`;
 	      }
 	    }
 
 	    function touchStartHandler(startEvt) {
-	      const startCoordX = startEvt.touches[0].clientX;
-	      let newCoordX = null;
-	      let moveX = null;
+	      const startCoord = {
+	        X: startEvt.touches[0].clientX,
+	        Y: startEvt.touches[0].clientY,
+	      };
+	      let move = {};
 	      let temporaryTranslateValue = translateValue;
 	      const startTime = new Date();
 	      let currentTime = null;
 
 	      function touchMoveHandler(moveEvt) {
-	        newCoordX = moveEvt.touches[0].clientX;
-	        moveX = newCoordX - startCoordX;
+	        const newCoord = {
+	          X: moveEvt.touches[0].clientX,
+	          Y: moveEvt.touches[0].clientY,
+	        };
+	        move.X = newCoord.X - startCoord.X;
+	        move.Y = newCoord.Y - startCoord.Y;
+	        if (Math.abs(move.Y) > MIN_SWIPE_LENGTH) {
+	          return;
+	        }
 	        currentTime = new Date();
 	        if (currentTime - startTime >= TOUCH_DELAY) {
-	          slidesContainer.style.transform = `translateX(${temporaryTranslateValue + moveX}px)`;
+	          slidesContainer.style.transform = `translateX(${temporaryTranslateValue + move.X}px)`;
 	        }
 	      }
 
@@ -321,13 +329,17 @@
 	      sliderElement.addEventListener('touchend', touchEndHandler);
 
 	      function touchEndHandler() {
-	        if (currentTime - startTime < TOUCH_DELAY && Math.abs(moveX) >= 20) {
-	          swipeSlide(moveX);
-	        } else {
-	          longTouchHandler(moveX);
-	        }
 	        sliderElement.removeEventListener('touchmove', touchMoveHandler);
 	        sliderElement.removeEventListener('touchend', touchEndHandler);
+	        if (Math.abs(move.Y) > MIN_SWIPE_LENGTH) {
+	          slidesContainer.style.transform = `translateX(${translateValue}px)`;
+	          return;
+	        }
+	        if (currentTime - startTime < TOUCH_DELAY && Math.abs(move.X) >= MIN_SWIPE_LENGTH) {
+	          swipeSlide(move.X);
+	        } else {
+	          longTouchHandler(move.X);
+	        }
 	      }
 	    }
 
